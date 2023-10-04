@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+{% load menu %}
+<html>
+    <head>
+        <title>Two48 Blog</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    
+
+<body>
+    <div class="header">
+        <nav>
+            <a href="{% url 'blog_home' %}">
+                <img src="{% static 'images/logo.jpg' %}">
+            </a>
+
+            <div class="navlinks">
+                {% menu %}
+            </div>
+        </nav>
+    </div>
+    <form method="get" action="{% url 'search' %}" class="search-box">
+        <input type="text" name="query">
+        <button type="submit" class="btn">search</button>
+    </form>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

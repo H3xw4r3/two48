@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h5>{{query}}</h5>
+    {%for post in results %}
+            <p>{{post}}</p>
+    {% endfor %}
+
+{% endblock %}
